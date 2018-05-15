@@ -1,0 +1,1395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dmmusicteachingModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="company_achievement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="startDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="endDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="breif" Type="varchar" MaxLength="255" />
+          <Property Name="details" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="company_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="establishDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="establishPlace" Type="varchar" MaxLength="255" />
+          <Property Name="Effect" Type="text" />
+          <Property Name="companyEmail" Type="varchar" MaxLength="255" />
+          <Property Name="companyMobile" Type="varchar" MaxLength="255" />
+          <Property Name="companyTel" Type="varchar" MaxLength="255" />
+          <Property Name="companyAddress" Type="varchar" MaxLength="255" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passwordHash" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="realName" Type="varchar" MaxLength="255" />
+          <Property Name="avatar" Type="varchar" MaxLength="255" />
+          <Property Name="gender" Type="bit" Nullable="false" />
+          <Property Name="birthday" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="11" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
+          <Property Name="wechatOppenId" Type="varchar" MaxLength="255" />
+          <Property Name="wechatNum" Type="varchar" MaxLength="255" />
+          <Property Name="wechatQRCodeUrl" Type="varchar" MaxLength="255" />
+          <Property Name="contryId" Type="int" Nullable="false" />
+          <Property Name="provinceId" Type="int" Nullable="false" />
+          <Property Name="cityId" Type="int" Nullable="false" />
+          <Property Name="areaId" Type="int" Nullable="false" />
+          <Property Name="longitude" Type="varchar" MaxLength="255" />
+          <Property Name="latitude" Type="varchar" MaxLength="255" />
+          <Property Name="isTeacherStatus" Type="int" Nullable="false" />
+          <Property Name="beTeacherAccountId" Type="int" Nullable="false" />
+          <Property Name="teachingSeniority" Type="int" Nullable="false" />
+          <Property Name="isCanTeaching" Type="bit" Nullable="false" />
+          <Property Name="teacherLevelId" Type="int" Nullable="false" />
+          <Property Name="teacherLevelRemark" Type="varchar" MaxLength="255" />
+          <Property Name="diploma" Type="varchar" MaxLength="255" />
+          <Property Name="auditStatsu" Type="int" Nullable="false" />
+          <Property Name="errorCount" Type="int" Nullable="false" />
+          <Property Name="isLock" Type="bit" Nullable="false" />
+          <Property Name="lockDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="unlockAccountId" Type="int" Nullable="false" />
+          <Property Name="isBlackList" Type="bit" Nullable="false" />
+          <Property Name="toBlackListDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="toBlackListAccountId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_apply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="curriculumId" Type="int" Nullable="false" />
+          <Property Name="applyStatus" Type="int" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="allClassHour" Type="int" Nullable="false" />
+          <Property Name="nowClassHour" Type="int" Nullable="false" />
+          <Property Name="consumerNowContryId" Type="int" Nullable="false" />
+          <Property Name="consumerNowProvinceId" Type="int" Nullable="false" />
+          <Property Name="consumerNowCityId" Type="int" Nullable="false" />
+          <Property Name="consumerNowAreaId" Type="int" Nullable="false" />
+          <Property Name="consumerNowLongitude" Type="varchar" MaxLength="255" />
+          <Property Name="consumerNowLatitude" Type="varchar" MaxLength="255" />
+          <Property Name="recordAccountId" Type="int" Nullable="false" />
+          <Property Name="recordDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="applyDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="applySuccessDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="applyFinishDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_demand_record">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="consumerMobile" Type="varchar" MaxLength="11" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="demandDetails" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_equipment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="equipmentIPAddress" Type="varchar" MaxLength="255" />
+          <Property Name="isDefault" Type="bit" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="courseName" Type="varchar" MaxLength="50" />
+          <Property Name="introduction" Type="text" Nullable="false" />
+          <Property Name="levelClassifyId" Type="int" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="createTime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="totalDuration" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="browseNumber" Type="int" Nullable="false" />
+          <Property Name="subscription" Type="int" Nullable="false" />
+          <Property Name="isFree" Type="bool" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="addAccountId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_arrangement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="applyId" Type="int" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="teachingPlaceId" Type="int" Nullable="false" />
+          <Property Name="classTime" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_classify">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="classifyName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="addAccountId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_evaluate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="applyId" Type="int" Nullable="false" />
+          <Property Name="conurseArraId" Type="int" Nullable="false" />
+          <Property Name="evaluateLevel" Type="int" Nullable="false" />
+          <Property Name="evaluateContent" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_level_classify">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="levelName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="courseClassifyId" Type="int" Nullable="false" />
+          <Property Name="addAccountId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_section">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sectionName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="courseId" Type="int" Nullable="false" />
+          <Property Name="addAccountId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lesson">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="lessonName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="courseId" Type="int" Nullable="false" />
+          <Property Name="resourcesCoverPath" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="resourcesType" Type="bool" Nullable="false" />
+          <Property Name="addAccountId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_module_cate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="htmlText" Type="text" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_modules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="parentId" Type="int" Nullable="false" />
+          <Property Name="menuType" Type="int" Nullable="false" />
+          <Property Name="relativeUrl" Type="varchar" MaxLength="255" />
+          <Property Name="htmlText" Type="varchar" MaxLength="255" />
+          <Property Name="controller" Type="varchar" MaxLength="255" />
+          <Property Name="action" Type="varchar" MaxLength="255" />
+          <Property Name="parameter" Type="varchar" MaxLength="255" />
+          <Property Name="isShowOnMenu" Type="int" Nullable="false" />
+          <Property Name="moduleCate" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_role_module_permssion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="moduleId" Type="int" Nullable="false" />
+          <Property Name="isAllowToAccess" Type="bit" Nullable="false" />
+          <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="updated" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="createdBy" Type="int" Nullable="false" />
+          <Property Name="updateBy" Type="int" Nullable="false" />
+          <Property Name="moduleCate" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="created" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="updated" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="createdBy" Type="int" Nullable="false" />
+          <Property Name="updateBy" Type="int" Nullable="false" />
+          <Property Name="disabled" Type="bit" Nullable="false" />
+          <Property Name="isMagRole" Type="bit" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="255" />
+          <Property Name="passWordHash" Type="varchar" MaxLength="255" />
+          <Property Name="isSupper" Type="bit" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="16" />
+          <Property Name="realName" Type="varchar" MaxLength="32" />
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="addRoleMuduleId" Type="varchar" MaxLength="255" />
+          <Property Name="removeRoleMuduleId" Type="varchar" MaxLength="255" />
+          <Property Name="lastLoginIp" Type="varchar" MaxLength="16" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user_operator_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="operaterId" Type="int" Nullable="false" />
+          <Property Name="actionDescription" Type="varchar" MaxLength="255" />
+          <Property Name="actionIp" Type="varchar" MaxLength="255" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="roleId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resources">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="resourcesPath" Type="varchar" MaxLength="100" />
+          <Property Name="resourcesSize" Type="varchar" MaxLength="20" />
+          <Property Name="resourcesDuration" Type="varchar" MaxLength="20" />
+          <Property Name="resourcesTypeId" Type="bool" Nullable="false" />
+          <Property Name="lessonId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resources_images">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imagePath" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="imagePathThum" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="resourcesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_project_par">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="howLongTimeToSendClassTimeMsg" Type="int" Nullable="false" />
+          <Property Name="timeForOverTimeToApply" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_short_message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="messType" Type="int" Nullable="false" />
+          <Property Name="consumerId" Type="int" Nullable="false" />
+          <Property Name="mobileNum" Type="varchar" MaxLength="11" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="messageContent" Type="text" />
+          <Property Name="sendDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_audit_process">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="auditStatus" Type="int" Nullable="false" />
+          <Property Name="auditRemark" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_experience">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="teachingStartDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="teachingEndDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="teachingSchool" Type="varchar" MaxLength="255" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_jurisdiction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="courseId" Type="int" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_level">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="levalName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="orderNum" Type="int" Nullable="false" />
+          <Property Name="descrition" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_level_operation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="operatorType" Type="int" Nullable="false" />
+          <Property Name="beforeOperationLevel" Type="int" Nullable="false" />
+          <Property Name="afterOperationLevel" Type="int" Nullable="false" />
+          <Property Name="remark" Type="text" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="accountId" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teaching_place">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacherId" Type="int" Nullable="false" />
+          <Property Name="contryId" Type="int" Nullable="false" />
+          <Property Name="provinceId" Type="int" Nullable="false" />
+          <Property Name="cityId" Type="int" Nullable="false" />
+          <Property Name="areaId" Type="int" Nullable="false" />
+          <Property Name="longitude" Type="varchar" MaxLength="255" />
+          <Property Name="latitude" Type="varchar" MaxLength="255" />
+          <Property Name="remark" Type="varchar" MaxLength="255" />
+          <Property Name="isDefault" Type="bit" Nullable="false" />
+          <Property Name="addDate" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dmmusicteachingModelStoreContainer">
+          <EntitySet Name="company_achievement" EntityType="Self.company_achievement" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="company_info" EntityType="Self.company_info" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="consumer" EntityType="Self.consumer" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="consumer_apply" EntityType="Self.consumer_apply" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="consumer_demand_record" EntityType="Self.consumer_demand_record" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="consumer_equipment" EntityType="Self.consumer_equipment" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course" EntityType="Self.course" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course_arrangement" EntityType="Self.course_arrangement" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course_classify" EntityType="Self.course_classify" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course_evaluate" EntityType="Self.course_evaluate" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course_level_classify" EntityType="Self.course_level_classify" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="course_section" EntityType="Self.course_section" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="lesson" EntityType="Self.lesson" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_module_cate" EntityType="Self.mag_module_cate" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_modules" EntityType="Self.mag_modules" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_role_module_permssion" EntityType="Self.mag_role_module_permssion" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_roles" EntityType="Self.mag_roles" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_user" EntityType="Self.mag_user" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_user_operator_log" EntityType="Self.mag_user_operator_log" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="mag_user_role" EntityType="Self.mag_user_role" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="resources" EntityType="Self.resources" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="resources_images" EntityType="Self.resources_images" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="sys_project_par" EntityType="Self.sys_project_par" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="sys_short_message" EntityType="Self.sys_short_message" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teacher_audit_process" EntityType="Self.teacher_audit_process" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teacher_experience" EntityType="Self.teacher_experience" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teacher_jurisdiction" EntityType="Self.teacher_jurisdiction" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teacher_level" EntityType="Self.teacher_level" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teacher_level_operation" EntityType="Self.teacher_level_operation" Schema="dmmusicteaching" store:Type="Tables" />
+          <EntitySet Name="teaching_place" EntityType="Self.teaching_place" Schema="dmmusicteaching" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dmmusicteachingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="company_achievement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" />
+          <Property Name="endDate" Type="DateTime" Nullable="false" />
+          <Property Name="breif" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="details" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="company_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="establishDate" Type="DateTime" Nullable="false" />
+          <Property Name="establishPlace" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Effect" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="companyEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="companyMobile" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="companyTel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="companyAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwordHash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="realName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="Boolean" Nullable="false" />
+          <Property Name="birthday" Type="DateTime" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="wechatOppenId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="wechatNum" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="wechatQRCodeUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="contryId" Type="Int32" Nullable="false" />
+          <Property Name="provinceId" Type="Int32" Nullable="false" />
+          <Property Name="cityId" Type="Int32" Nullable="false" />
+          <Property Name="areaId" Type="Int32" Nullable="false" />
+          <Property Name="longitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="latitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isTeacherStatus" Type="Int32" Nullable="false" />
+          <Property Name="beTeacherAccountId" Type="Int32" Nullable="false" />
+          <Property Name="teachingSeniority" Type="Int32" Nullable="false" />
+          <Property Name="isCanTeaching" Type="Boolean" Nullable="false" />
+          <Property Name="teacherLevelId" Type="Int32" Nullable="false" />
+          <Property Name="teacherLevelRemark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="diploma" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="auditStatsu" Type="Int32" Nullable="false" />
+          <Property Name="errorCount" Type="Int32" Nullable="false" />
+          <Property Name="isLock" Type="Boolean" Nullable="false" />
+          <Property Name="lockDate" Type="DateTime" Nullable="false" />
+          <Property Name="unlockAccountId" Type="Int32" Nullable="false" />
+          <Property Name="isBlackList" Type="Boolean" Nullable="false" />
+          <Property Name="toBlackListDate" Type="DateTime" Nullable="false" />
+          <Property Name="toBlackListAccountId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_apply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="curriculumId" Type="Int32" Nullable="false" />
+          <Property Name="applyStatus" Type="Int32" Nullable="false" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="allClassHour" Type="Int32" Nullable="false" />
+          <Property Name="nowClassHour" Type="Int32" Nullable="false" />
+          <Property Name="consumerNowContryId" Type="Int32" Nullable="false" />
+          <Property Name="consumerNowProvinceId" Type="Int32" Nullable="false" />
+          <Property Name="consumerNowCityId" Type="Int32" Nullable="false" />
+          <Property Name="consumerNowAreaId" Type="Int32" Nullable="false" />
+          <Property Name="consumerNowLongitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="consumerNowLatitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="recordAccountId" Type="Int32" Nullable="false" />
+          <Property Name="recordDate" Type="DateTime" Nullable="false" />
+          <Property Name="applyDate" Type="DateTime" Nullable="false" />
+          <Property Name="applySuccessDate" Type="DateTime" Nullable="false" />
+          <Property Name="applyFinishDate" Type="DateTime" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_demand_record">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="consumerMobile" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="demandDetails" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="consumer_equipment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="equipmentIPAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isDefault" Type="Boolean" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="introduction" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="levelClassifyId" Type="Int32" Nullable="false" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="createTime" Type="DateTime" Nullable="false" />
+          <Property Name="totalDuration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="browseNumber" Type="Int32" Nullable="false" />
+          <Property Name="subscription" Type="Int32" Nullable="false" />
+          <Property Name="isFree" Type="Boolean" Nullable="false" />
+          <Property Name="price" Type="Single" Nullable="false" />
+          <Property Name="addAccountId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_arrangement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="applyId" Type="Int32" Nullable="false" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="teachingPlaceId" Type="Int32" Nullable="false" />
+          <Property Name="classTime" Type="DateTime" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_classify">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="classifyName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="addAccountId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_evaluate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="parentId" Type="Int32" Nullable="false" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="applyId" Type="Int32" Nullable="false" />
+          <Property Name="conurseArraId" Type="Int32" Nullable="false" />
+          <Property Name="evaluateLevel" Type="Int32" Nullable="false" />
+          <Property Name="evaluateContent" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_level_classify">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="levelName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courseClassifyId" Type="Int32" Nullable="false" />
+          <Property Name="addAccountId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course_section">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sectionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courseId" Type="Int32" Nullable="false" />
+          <Property Name="addAccountId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lesson">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="lessonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="courseId" Type="Int32" Nullable="false" />
+          <Property Name="resourcesCoverPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="resourcesType" Type="Boolean" Nullable="false" />
+          <Property Name="addAccountId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_module_cate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="htmlText" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_modules">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="parentId" Type="Int32" Nullable="false" />
+          <Property Name="menuType" Type="Int32" Nullable="false" />
+          <Property Name="relativeUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="htmlText" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="controller" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="action" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="parameter" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isShowOnMenu" Type="Int32" Nullable="false" />
+          <Property Name="moduleCate" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_role_module_permssion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleId" Type="Int32" Nullable="false" />
+          <Property Name="moduleId" Type="Int32" Nullable="false" />
+          <Property Name="isAllowToAccess" Type="Boolean" Nullable="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" />
+          <Property Name="updated" Type="DateTime" Nullable="false" />
+          <Property Name="createdBy" Type="Int32" Nullable="false" />
+          <Property Name="updateBy" Type="Int32" Nullable="false" />
+          <Property Name="moduleCate" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" />
+          <Property Name="updated" Type="DateTime" Nullable="false" />
+          <Property Name="createdBy" Type="Int32" Nullable="false" />
+          <Property Name="updateBy" Type="Int32" Nullable="false" />
+          <Property Name="disabled" Type="Boolean" Nullable="false" />
+          <Property Name="isMagRole" Type="Boolean" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="passWordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isSupper" Type="Boolean" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="realName" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="roleId" Type="Int32" Nullable="false" />
+          <Property Name="addRoleMuduleId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="removeRoleMuduleId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="lastLoginIp" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user_operator_log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="operaterId" Type="Int32" Nullable="false" />
+          <Property Name="actionDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="actionIp" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mag_user_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="roleId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resources">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="resourcesPath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="resourcesSize" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="resourcesDuration" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="resourcesTypeId" Type="Boolean" Nullable="false" />
+          <Property Name="lessonId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resources_images">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imagePath" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imagePathThum" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="resourcesId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_project_par">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="howLongTimeToSendClassTimeMsg" Type="Int32" Nullable="false" />
+          <Property Name="timeForOverTimeToApply" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_short_message">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="messType" Type="Int32" Nullable="false" />
+          <Property Name="consumerId" Type="Int32" Nullable="false" />
+          <Property Name="mobileNum" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="messageContent" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="sendDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_audit_process">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="auditStatus" Type="Int32" Nullable="false" />
+          <Property Name="auditRemark" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_experience">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="teachingStartDate" Type="DateTime" Nullable="false" />
+          <Property Name="teachingEndDate" Type="DateTime" Nullable="false" />
+          <Property Name="teachingSchool" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_jurisdiction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="courseId" Type="Int32" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_level">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="levalName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="orderNum" Type="Int32" Nullable="false" />
+          <Property Name="descrition" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teacher_level_operation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="operatorType" Type="Int32" Nullable="false" />
+          <Property Name="beforeOperationLevel" Type="Int32" Nullable="false" />
+          <Property Name="afterOperationLevel" Type="Int32" Nullable="false" />
+          <Property Name="remark" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="accountId" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teaching_place">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacherId" Type="Int32" Nullable="false" />
+          <Property Name="contryId" Type="Int32" Nullable="false" />
+          <Property Name="provinceId" Type="Int32" Nullable="false" />
+          <Property Name="cityId" Type="Int32" Nullable="false" />
+          <Property Name="areaId" Type="Int32" Nullable="false" />
+          <Property Name="longitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="latitude" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="isDefault" Type="Boolean" Nullable="false" />
+          <Property Name="addDate" Type="DateTime" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dmmusicteachingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="company_achievement" EntityType="Self.company_achievement" />
+          <EntitySet Name="company_info" EntityType="Self.company_info" />
+          <EntitySet Name="consumer" EntityType="Self.consumer" />
+          <EntitySet Name="consumer_apply" EntityType="Self.consumer_apply" />
+          <EntitySet Name="consumer_demand_record" EntityType="Self.consumer_demand_record" />
+          <EntitySet Name="consumer_equipment" EntityType="Self.consumer_equipment" />
+          <EntitySet Name="course" EntityType="Self.course" />
+          <EntitySet Name="course_arrangement" EntityType="Self.course_arrangement" />
+          <EntitySet Name="course_classify" EntityType="Self.course_classify" />
+          <EntitySet Name="course_evaluate" EntityType="Self.course_evaluate" />
+          <EntitySet Name="course_level_classify" EntityType="Self.course_level_classify" />
+          <EntitySet Name="course_section" EntityType="Self.course_section" />
+          <EntitySet Name="lesson" EntityType="Self.lesson" />
+          <EntitySet Name="mag_module_cate" EntityType="Self.mag_module_cate" />
+          <EntitySet Name="mag_modules" EntityType="Self.mag_modules" />
+          <EntitySet Name="mag_role_module_permssion" EntityType="Self.mag_role_module_permssion" />
+          <EntitySet Name="mag_roles" EntityType="Self.mag_roles" />
+          <EntitySet Name="mag_user" EntityType="Self.mag_user" />
+          <EntitySet Name="mag_user_operator_log" EntityType="Self.mag_user_operator_log" />
+          <EntitySet Name="mag_user_role" EntityType="Self.mag_user_role" />
+          <EntitySet Name="resources" EntityType="Self.resources" />
+          <EntitySet Name="resources_images" EntityType="Self.resources_images" />
+          <EntitySet Name="sys_project_par" EntityType="Self.sys_project_par" />
+          <EntitySet Name="sys_short_message" EntityType="Self.sys_short_message" />
+          <EntitySet Name="teacher_audit_process" EntityType="Self.teacher_audit_process" />
+          <EntitySet Name="teacher_experience" EntityType="Self.teacher_experience" />
+          <EntitySet Name="teacher_jurisdiction" EntityType="Self.teacher_jurisdiction" />
+          <EntitySet Name="teacher_level" EntityType="Self.teacher_level" />
+          <EntitySet Name="teacher_level_operation" EntityType="Self.teacher_level_operation" />
+          <EntitySet Name="teaching_place" EntityType="Self.teaching_place" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dmmusicteachingModelStoreContainer" CdmEntityContainer="dmmusicteachingEntities">
+          <EntitySetMapping Name="company_achievement">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.company_achievement">
+              <MappingFragment StoreEntitySet="company_achievement">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="breif" ColumnName="breif" />
+                <ScalarProperty Name="details" ColumnName="details" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="company_info">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.company_info">
+              <MappingFragment StoreEntitySet="company_info">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="establishDate" ColumnName="establishDate" />
+                <ScalarProperty Name="establishPlace" ColumnName="establishPlace" />
+                <ScalarProperty Name="Effect" ColumnName="Effect" />
+                <ScalarProperty Name="companyEmail" ColumnName="companyEmail" />
+                <ScalarProperty Name="companyMobile" ColumnName="companyMobile" />
+                <ScalarProperty Name="companyTel" ColumnName="companyTel" />
+                <ScalarProperty Name="companyAddress" ColumnName="companyAddress" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consumer">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.consumer">
+              <MappingFragment StoreEntitySet="consumer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="passwordHash" ColumnName="passwordHash" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="wechatOppenId" ColumnName="wechatOppenId" />
+                <ScalarProperty Name="wechatNum" ColumnName="wechatNum" />
+                <ScalarProperty Name="wechatQRCodeUrl" ColumnName="wechatQRCodeUrl" />
+                <ScalarProperty Name="contryId" ColumnName="contryId" />
+                <ScalarProperty Name="provinceId" ColumnName="provinceId" />
+                <ScalarProperty Name="cityId" ColumnName="cityId" />
+                <ScalarProperty Name="areaId" ColumnName="areaId" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="isTeacherStatus" ColumnName="isTeacherStatus" />
+                <ScalarProperty Name="beTeacherAccountId" ColumnName="beTeacherAccountId" />
+                <ScalarProperty Name="teachingSeniority" ColumnName="teachingSeniority" />
+                <ScalarProperty Name="isCanTeaching" ColumnName="isCanTeaching" />
+                <ScalarProperty Name="teacherLevelId" ColumnName="teacherLevelId" />
+                <ScalarProperty Name="teacherLevelRemark" ColumnName="teacherLevelRemark" />
+                <ScalarProperty Name="diploma" ColumnName="diploma" />
+                <ScalarProperty Name="auditStatsu" ColumnName="auditStatsu" />
+                <ScalarProperty Name="errorCount" ColumnName="errorCount" />
+                <ScalarProperty Name="isLock" ColumnName="isLock" />
+                <ScalarProperty Name="lockDate" ColumnName="lockDate" />
+                <ScalarProperty Name="unlockAccountId" ColumnName="unlockAccountId" />
+                <ScalarProperty Name="isBlackList" ColumnName="isBlackList" />
+                <ScalarProperty Name="toBlackListDate" ColumnName="toBlackListDate" />
+                <ScalarProperty Name="toBlackListAccountId" ColumnName="toBlackListAccountId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consumer_apply">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.consumer_apply">
+              <MappingFragment StoreEntitySet="consumer_apply">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="curriculumId" ColumnName="curriculumId" />
+                <ScalarProperty Name="applyStatus" ColumnName="applyStatus" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="allClassHour" ColumnName="allClassHour" />
+                <ScalarProperty Name="nowClassHour" ColumnName="nowClassHour" />
+                <ScalarProperty Name="consumerNowContryId" ColumnName="consumerNowContryId" />
+                <ScalarProperty Name="consumerNowProvinceId" ColumnName="consumerNowProvinceId" />
+                <ScalarProperty Name="consumerNowCityId" ColumnName="consumerNowCityId" />
+                <ScalarProperty Name="consumerNowAreaId" ColumnName="consumerNowAreaId" />
+                <ScalarProperty Name="consumerNowLongitude" ColumnName="consumerNowLongitude" />
+                <ScalarProperty Name="consumerNowLatitude" ColumnName="consumerNowLatitude" />
+                <ScalarProperty Name="recordAccountId" ColumnName="recordAccountId" />
+                <ScalarProperty Name="recordDate" ColumnName="recordDate" />
+                <ScalarProperty Name="applyDate" ColumnName="applyDate" />
+                <ScalarProperty Name="applySuccessDate" ColumnName="applySuccessDate" />
+                <ScalarProperty Name="applyFinishDate" ColumnName="applyFinishDate" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consumer_demand_record">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.consumer_demand_record">
+              <MappingFragment StoreEntitySet="consumer_demand_record">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="consumerMobile" ColumnName="consumerMobile" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="demandDetails" ColumnName="demandDetails" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consumer_equipment">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.consumer_equipment">
+              <MappingFragment StoreEntitySet="consumer_equipment">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="equipmentIPAddress" ColumnName="equipmentIPAddress" />
+                <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course">
+              <MappingFragment StoreEntitySet="course">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="courseName" ColumnName="courseName" />
+                <ScalarProperty Name="introduction" ColumnName="introduction" />
+                <ScalarProperty Name="levelClassifyId" ColumnName="levelClassifyId" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="createTime" ColumnName="createTime" />
+                <ScalarProperty Name="totalDuration" ColumnName="totalDuration" />
+                <ScalarProperty Name="browseNumber" ColumnName="browseNumber" />
+                <ScalarProperty Name="subscription" ColumnName="subscription" />
+                <ScalarProperty Name="isFree" ColumnName="isFree" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="addAccountId" ColumnName="addAccountId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_arrangement">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course_arrangement">
+              <MappingFragment StoreEntitySet="course_arrangement">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="applyId" ColumnName="applyId" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="teachingPlaceId" ColumnName="teachingPlaceId" />
+                <ScalarProperty Name="classTime" ColumnName="classTime" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_classify">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course_classify">
+              <MappingFragment StoreEntitySet="course_classify">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="classifyName" ColumnName="classifyName" />
+                <ScalarProperty Name="addAccountId" ColumnName="addAccountId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_evaluate">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course_evaluate">
+              <MappingFragment StoreEntitySet="course_evaluate">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="applyId" ColumnName="applyId" />
+                <ScalarProperty Name="conurseArraId" ColumnName="conurseArraId" />
+                <ScalarProperty Name="evaluateLevel" ColumnName="evaluateLevel" />
+                <ScalarProperty Name="evaluateContent" ColumnName="evaluateContent" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_level_classify">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course_level_classify">
+              <MappingFragment StoreEntitySet="course_level_classify">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="levelName" ColumnName="levelName" />
+                <ScalarProperty Name="courseClassifyId" ColumnName="courseClassifyId" />
+                <ScalarProperty Name="addAccountId" ColumnName="addAccountId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="course_section">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.course_section">
+              <MappingFragment StoreEntitySet="course_section">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sectionName" ColumnName="sectionName" />
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="addAccountId" ColumnName="addAccountId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lesson">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.lesson">
+              <MappingFragment StoreEntitySet="lesson">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="lessonName" ColumnName="lessonName" />
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="resourcesCoverPath" ColumnName="resourcesCoverPath" />
+                <ScalarProperty Name="resourcesType" ColumnName="resourcesType" />
+                <ScalarProperty Name="addAccountId" ColumnName="addAccountId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_module_cate">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_module_cate">
+              <MappingFragment StoreEntitySet="mag_module_cate">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="htmlText" ColumnName="htmlText" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_modules">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_modules">
+              <MappingFragment StoreEntitySet="mag_modules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="parentId" ColumnName="parentId" />
+                <ScalarProperty Name="menuType" ColumnName="menuType" />
+                <ScalarProperty Name="relativeUrl" ColumnName="relativeUrl" />
+                <ScalarProperty Name="htmlText" ColumnName="htmlText" />
+                <ScalarProperty Name="controller" ColumnName="controller" />
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="parameter" ColumnName="parameter" />
+                <ScalarProperty Name="isShowOnMenu" ColumnName="isShowOnMenu" />
+                <ScalarProperty Name="moduleCate" ColumnName="moduleCate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_role_module_permssion">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_role_module_permssion">
+              <MappingFragment StoreEntitySet="mag_role_module_permssion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="moduleId" ColumnName="moduleId" />
+                <ScalarProperty Name="isAllowToAccess" ColumnName="isAllowToAccess" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="moduleCate" ColumnName="moduleCate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_roles">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_roles">
+              <MappingFragment StoreEntitySet="mag_roles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="created" ColumnName="created" />
+                <ScalarProperty Name="updated" ColumnName="updated" />
+                <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+                <ScalarProperty Name="updateBy" ColumnName="updateBy" />
+                <ScalarProperty Name="disabled" ColumnName="disabled" />
+                <ScalarProperty Name="isMagRole" ColumnName="isMagRole" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_user">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_user">
+              <MappingFragment StoreEntitySet="mag_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="passWordHash" ColumnName="passWordHash" />
+                <ScalarProperty Name="isSupper" ColumnName="isSupper" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="realName" ColumnName="realName" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="addRoleMuduleId" ColumnName="addRoleMuduleId" />
+                <ScalarProperty Name="removeRoleMuduleId" ColumnName="removeRoleMuduleId" />
+                <ScalarProperty Name="lastLoginIp" ColumnName="lastLoginIp" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_user_operator_log">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_user_operator_log">
+              <MappingFragment StoreEntitySet="mag_user_operator_log">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="operaterId" ColumnName="operaterId" />
+                <ScalarProperty Name="actionDescription" ColumnName="actionDescription" />
+                <ScalarProperty Name="actionIp" ColumnName="actionIp" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mag_user_role">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.mag_user_role">
+              <MappingFragment StoreEntitySet="mag_user_role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="roleId" ColumnName="roleId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resources">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.resources">
+              <MappingFragment StoreEntitySet="resources">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="resourcesPath" ColumnName="resourcesPath" />
+                <ScalarProperty Name="resourcesSize" ColumnName="resourcesSize" />
+                <ScalarProperty Name="resourcesDuration" ColumnName="resourcesDuration" />
+                <ScalarProperty Name="resourcesTypeId" ColumnName="resourcesTypeId" />
+                <ScalarProperty Name="lessonId" ColumnName="lessonId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resources_images">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.resources_images">
+              <MappingFragment StoreEntitySet="resources_images">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+                <ScalarProperty Name="imagePathThum" ColumnName="imagePathThum" />
+                <ScalarProperty Name="resourcesId" ColumnName="resourcesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_project_par">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.sys_project_par">
+              <MappingFragment StoreEntitySet="sys_project_par">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="howLongTimeToSendClassTimeMsg" ColumnName="howLongTimeToSendClassTimeMsg" />
+                <ScalarProperty Name="timeForOverTimeToApply" ColumnName="timeForOverTimeToApply" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_short_message">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.sys_short_message">
+              <MappingFragment StoreEntitySet="sys_short_message">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="messType" ColumnName="messType" />
+                <ScalarProperty Name="consumerId" ColumnName="consumerId" />
+                <ScalarProperty Name="mobileNum" ColumnName="mobileNum" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="messageContent" ColumnName="messageContent" />
+                <ScalarProperty Name="sendDate" ColumnName="sendDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teacher_audit_process">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teacher_audit_process">
+              <MappingFragment StoreEntitySet="teacher_audit_process">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="auditStatus" ColumnName="auditStatus" />
+                <ScalarProperty Name="auditRemark" ColumnName="auditRemark" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teacher_experience">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teacher_experience">
+              <MappingFragment StoreEntitySet="teacher_experience">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="teachingStartDate" ColumnName="teachingStartDate" />
+                <ScalarProperty Name="teachingEndDate" ColumnName="teachingEndDate" />
+                <ScalarProperty Name="teachingSchool" ColumnName="teachingSchool" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teacher_jurisdiction">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teacher_jurisdiction">
+              <MappingFragment StoreEntitySet="teacher_jurisdiction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="courseId" ColumnName="courseId" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teacher_level">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teacher_level">
+              <MappingFragment StoreEntitySet="teacher_level">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="levalName" ColumnName="levalName" />
+                <ScalarProperty Name="orderNum" ColumnName="orderNum" />
+                <ScalarProperty Name="descrition" ColumnName="descrition" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teacher_level_operation">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teacher_level_operation">
+              <MappingFragment StoreEntitySet="teacher_level_operation">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="operatorType" ColumnName="operatorType" />
+                <ScalarProperty Name="beforeOperationLevel" ColumnName="beforeOperationLevel" />
+                <ScalarProperty Name="afterOperationLevel" ColumnName="afterOperationLevel" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="accountId" ColumnName="accountId" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teaching_place">
+            <EntityTypeMapping TypeName="dmmusicteachingModel.teaching_place">
+              <MappingFragment StoreEntitySet="teaching_place">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+                <ScalarProperty Name="contryId" ColumnName="contryId" />
+                <ScalarProperty Name="provinceId" ColumnName="provinceId" />
+                <ScalarProperty Name="cityId" ColumnName="cityId" />
+                <ScalarProperty Name="areaId" ColumnName="areaId" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="isDefault" ColumnName="isDefault" />
+                <ScalarProperty Name="addDate" ColumnName="addDate" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
