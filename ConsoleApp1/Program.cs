@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApp1
@@ -10,7 +11,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            // c2.InitShow();
+            c2.InitShow();
 
             /*
              * 零散小语法
@@ -38,6 +39,23 @@ namespace ConsoleApp1
             var z = new Z();
             var zArr = z[1];
             var zTestModelArr = z["TestModel_Arrar_" + 49];
+
+            /*
+             * 线程
+             */
+            int num = 0;
+            Thread newThread = new Thread(TestThead.TestSleep);
+            newThread.Start();
+
+            var task = Task.Factory.StartNew(() =>
+            {
+                Console.WriteLine("go in Task.Factory.StartNew() now Date is:" + DateTime.Now);
+                Thread.Sleep(2000);
+
+                Console.WriteLine("go in Task.Factory.StartNew() | after sleep | now Date is:" + DateTime.Now);
+            });
+
+            Console.ReadKey();
         }
     }
     #region 类的继承
@@ -79,7 +97,6 @@ namespace ConsoleApp1
 
             c2 c2 = new c2();
             c2.Test_New();
-            Console.ReadKey();
         }
     }
     #endregion
@@ -146,6 +163,19 @@ namespace ConsoleApp1
             public String Name { get; set; }
         }
         #endregion
+    }
+    #endregion
+
+    #region 线程
+    public class TestThead
+    {
+        public static void TestSleep()
+        {
+            Console.WriteLine("go in TestSleep() now Date is:" + DateTime.Now);
+            Thread.Sleep(2000);
+
+            Console.WriteLine("go in TestSleep() | after sleep | now Date is:" + DateTime.Now);
+        }
     }
     #endregion
 }
