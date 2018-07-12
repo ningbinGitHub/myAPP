@@ -7,6 +7,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonApplication1", "Pytho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{F9768FD2-9392-450B-A255-723E0F6E711F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android", "Android\Android.csproj", "{290B1520-F7B8-4ED7-9668-2A841668CB17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,18 @@ Global
 		{F9768FD2-9392-450B-A255-723E0F6E711F}.Release|x64.Build.0 = Release|Any CPU
 		{F9768FD2-9392-450B-A255-723E0F6E711F}.Release|x86.ActiveCfg = Release|Any CPU
 		{F9768FD2-9392-450B-A255-723E0F6E711F}.Release|x86.Build.0 = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|x64.Build.0 = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Debug|x86.Build.0 = Debug|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|x64.ActiveCfg = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|x64.Build.0 = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|x86.ActiveCfg = Release|Any CPU
+		{290B1520-F7B8-4ED7-9668-2A841668CB17}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
