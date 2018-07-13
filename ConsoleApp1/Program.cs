@@ -11,51 +11,79 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            c2.InitShow();
+            //c2.InitShow();
 
-            /*
-             * 零散小语法
-             */
-            //进位
-            var s = 1 << 3;
+            ///*
+            // * 零散小语法
+            // */
+            ////进位
+            //var s = 1 << 3;
 
-            /*
-             * 数组
-             */
-            int[] arrayInt = new Int32[2] { 32, 23 };
-            arrayInt[0] = 12;
-            //将数组增加一个长度
-            Array.Resize(ref arrayInt, arrayInt.Length + 1);
+            ///*
+            // * 数组
+            // */
+            //int[] arrayInt = new Int32[2] { 32, 23 };
+            //arrayInt[0] = 12;
+            ////将数组增加一个长度
+            //Array.Resize(ref arrayInt, arrayInt.Length + 1);
 
-            int[] x = new int[2];
-            int[] y = new int[2];
-            x[0] = 5; x[1] = 6;
-            x.Initialize();
-            y.Initialize();
+            //int[] x = new int[2];
+            //int[] y = new int[2];
+            //x[0] = 5; x[1] = 6;
+            //x.Initialize();
+            //y.Initialize();
 
-            /*
-             * 索引
-             */
-            var z = new Z();
-            var zArr = z[1];
-            var zTestModelArr = z["TestModel_Arrar_" + 49];
+            ///*
+            // * 索引
+            // */
+            //var z = new Z();
+            //var zArr = z[1];
+            //var zTestModelArr = z["TestModel_Arrar_" + 49];
 
-            /*
-             * 线程
-             */
-            int num = 0;
-            Thread newThread = new Thread(TestThead.TestSleep);
-            newThread.Start();
+            ///*
+            // * 线程
+            // */
+            //int num = 0;
+            //Thread newThread = new Thread(TestThead.TestSleep);
+            //newThread.Start();
 
-            var task = Task.Factory.StartNew(() =>
+            //var task = Task.Factory.StartNew(() =>
+            //{
+            //    Console.WriteLine("go in Task.Factory.StartNew() now Date is:" + DateTime.Now);
+            //    Thread.Sleep(2000);
+
+            //    Console.WriteLine("go in Task.Factory.StartNew() | after sleep | now Date is:" + DateTime.Now);
+            //});
+            
+            var num = 1_0000;
+            for (int i = 0; i < num; i++)
             {
-                Console.WriteLine("go in Task.Factory.StartNew() now Date is:" + DateTime.Now);
-                Thread.Sleep(2000);
+                Thread s = new Thread(s2);
+                s.Start();
+            }
 
-                Console.WriteLine("go in Task.Factory.StartNew() | after sleep | now Date is:" + DateTime.Now);
-            });
+            //Thread.Sleep(5000);
+
+            //for (int i = 0; i < num; i++)
+            //{
+            //    ErrorLog.WriteLog_1(funName, message, "1");
+            //}
+
 
             Console.ReadKey();
+        }
+
+        public static void s1() {
+            var funName = "测试写入";
+            var message = "测试的写入的内容";
+            ErrorLog.WriteLog(funName, message, "0");
+        }
+
+        public static void s2()
+        {
+            var funName = "测试写入";
+            var message = "测试的写入的内容";
+            ErrorLog.WriteLog_1(funName, message, "0");
         }
     }
     #region 类的继承
